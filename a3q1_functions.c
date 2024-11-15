@@ -4,6 +4,9 @@
 #include <ctype.h>
 #include "a3q1_header.h"
 
+Variable variables[10];
+int varCount = 0; 
+
 // The createNode function allocates memory to the tree and creates a new node using the given data before returning the node.
 Node* createNode(char *data){
 
