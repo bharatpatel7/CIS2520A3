@@ -4,6 +4,17 @@
 #include <ctype.h>
 #include "a3q1_header.h"
 
+void freeTree(Node *root){
+    if (root == NULL){
+        return;
+    }
+    freeTree(root->left);
+    freeTree(root->right);
+    free(root);
+
+}
+
+
 // The main function drives the menu selection loop.
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -47,6 +58,8 @@ int main(int argc, char *argv[]) {
             default: printf("Please enter a valid choice.\n");
         }
     } while (choice != 5);
+
+    freeTree(root);
 
     return 0;
 }
